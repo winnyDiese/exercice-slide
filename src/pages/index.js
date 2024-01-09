@@ -37,6 +37,10 @@ export default function Home() {
     setCountIndex(newIndex)
   }
 
+  const goToSlideIndex = slideIndex=>{
+    setCountIndex(slideIndex)
+  }
+
   return (
     <div className='max-w-[900px] h-[400px] m-auto w-full py-16 px-4 relative group'>
       <div style={{backgroundImage:`url(${slides[countIndex].url})`}} className='w-full h-full rounded-2xl bg-center bg-cover duration-500'></div>
@@ -51,7 +55,11 @@ export default function Home() {
 
       <div className='flex top-4 justify-center py-2'>
         { slides.map((slide,slideIndex)=>(
-            <div>
+            <div 
+              key={slideIndex} 
+              onClick={()=>goToSlideIndex(slideIndex)}
+              className='text-2xl cursor-pointer'
+            >
               <RxDotFilled />
             </div>
          ))}
