@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import {BsChevronCompactLeft,BsChevronCompactRight} from "react-icons/bs"
 import { RxDot, RxDotFilled } from 'react-icons/rx'
+import Timer from './components/Timer'
 
 
 export default function Home() {
@@ -65,6 +66,11 @@ export default function Home() {
          ))}
       </div>
 
+      <div>
+        <Timer onSlide={nextSlide} />
+      </div>
+
     </div>
   )
+
 }
